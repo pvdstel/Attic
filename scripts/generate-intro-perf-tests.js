@@ -5,7 +5,7 @@ const macroName = 'solution';
 const maximumCaseDepth = 40;
 
 /**
- * @param {number} depth 
+ * @param {number} depth
  */
 function makeCase(depth) {
     const name = "introTest" + depth;

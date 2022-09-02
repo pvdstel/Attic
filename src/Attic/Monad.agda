@@ -18,7 +18,7 @@ open import Level using (Level) renaming (suc to sucℓ; _⊔_ to _⊔ℓ_)
 open import Reflection using (ErrorPart; Meta; TC; Term; Type; bindTC; quoteTC; catchTC; typeError; strErr; termErr) renaming (return to returnTC)
 open import Reflection.TypeChecking.Monad.Instances
 
-private 
+private
   variable
     ℓ ℓs : Level
     X : Set ℓ

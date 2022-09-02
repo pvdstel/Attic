@@ -34,7 +34,7 @@ private
     def tName tArgs ← reduce t
       where
         _ → noDataOrRecord t
-    getDefinition tName >>= λ { 
+    getDefinition tName >>= λ {
         (Reflection.data-type pars cs) → return cs
       ; (Reflection.record-type c fs) → return [ c ]
       ; _ → noDataOrRecord t
@@ -46,7 +46,7 @@ private
     t ← getType n
     rest ← getConstructorTypes ns
     return (t ∷ rest)
-  
+
   unfoldConstructorType : Type → (Context × Type)
   unfoldConstructorType (Reflection.pi a (Reflection.abs argN tT)) =
     map₁ ((argN , a) ∷_) (unfoldConstructorType tT)

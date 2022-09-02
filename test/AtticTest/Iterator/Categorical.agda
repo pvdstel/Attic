@@ -35,6 +35,6 @@ module Guard where
     return n
 
   evens = toList evenSource 500
-  
+
   _ : evens ≡ 2 ∷ 4 ∷ 6 ∷ 8 ∷ 10 ∷ 12 ∷ 14 ∷ 16 ∷ 18 ∷ 20 ∷ []
   _ = refl

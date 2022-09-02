@@ -181,7 +181,7 @@ evaluateAttic {ℓa} {A} searchDepth attic initialState = runAtticClosure search
         ; (unificationError err)     → return (fatalError err)
         ; (unificationFailure rest′) →
             let rests = combineRests rest′ rest
-            in case (Iterator.next rests) (Iterator.state rests) of λ 
+            in case (Iterator.next rests) (Iterator.state rests) of λ
               { Done → return exhausted
               ; (Skip s2) → let offsetRests = offsetIterator rests s2
                             in runAtticClosure fuel′ skipPlaceholder offsetRests
@@ -218,7 +218,7 @@ asMacro′ searchDepth attic hole = do
       incomplete → typeError $ errStr "Search depth exceeded (no solution found). Try increasing the search depth (asMacro′) or optimize your tactic(s)."
       exhausted → typeError $ errStr "No solution was found (options exhausted)."
       (fatalError err) → typeError $ strErr "A fatal error occurred while evaluating proof candidates: " ∷ err
-  
+
   return _
 
 asMacro : Attic A → Term → TC ⊤

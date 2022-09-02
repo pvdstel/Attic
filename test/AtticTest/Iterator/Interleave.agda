@@ -53,6 +53,6 @@ module Filtered where
   _ = refl
 
   remadeNats = interleave odds evens
-  
+
   _ : (toList remadeNats 20) ≡ 1 ∷ 2 ∷ 3 ∷ 4 ∷ 5 ∷ 6 ∷ 7 ∷ 8 ∷ 9 ∷ 10 ∷ []
   _ = refl

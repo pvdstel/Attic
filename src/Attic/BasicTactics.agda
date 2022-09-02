@@ -78,7 +78,7 @@ debugLogProofState = do
 
 -- Solves the specified goal using the term as a solution.
 solveGoal : Goal → Term → Attic ⊤ {Level.zero}
-solveGoal goal term = updateState λ state → 
+solveGoal goal term = updateState λ state →
   goalExistsAndIsUnique goal (ProofState.goals state) (value _) ,
   record { focusedGoal = nothing
          ; goals = boolFilter
@@ -184,7 +184,7 @@ multi {s = s} {A = A} (goal ∷ goals′) attic = updateState λ beforeState →
 
 infixl 10 _∶▷⁺·_
 _∶▷⁺·_ : ∀ {a b s1 s2} {A : Set a} {B : Set b} → Attic A {s1} → Attic B {s2} → Attic ⊤
-a ∶▷⁺· b = updateState (λ oldState → 
+a ∶▷⁺· b = updateState (λ oldState →
   let middle = a >> updateState (λ newState →
                   let newGoals = boolFilter
                         (λ ng → let ngMeta = Goal.meta ng
